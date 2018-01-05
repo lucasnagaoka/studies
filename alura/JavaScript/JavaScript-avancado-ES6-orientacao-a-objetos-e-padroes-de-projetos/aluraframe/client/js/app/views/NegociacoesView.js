@@ -8,17 +8,16 @@ class NegociacoesView {
     return `
         <table class="table table-hover table-bordered">
             <thead>
-            <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
-            </tr>
+                <tr>
+                    <th>DATA</th>
+                    <th>QUANTIDADE</th>
+                    <th>VALOR</th>
+                    <th>VOLUME</th>
+                </tr>
             </thead>
         
             <tbody>
-            ${model.negociacoes.map(n => {
-                return 
+            ${model.negociacoes.map(n => 
                 `
                     <tr>
                         <td>${DateHelper.dataParaTexto(n.data)}</td>
@@ -27,10 +26,13 @@ class NegociacoesView {
                         <td>${n.volume}</td>
                     </tr>
                 `
-            }).join('')}
+            ).join('')}
             </tbody>
-        
-            <tfoot/>
+            
+            <tfoot>
+                <td colspan="3"></td>
+                <td>${ model.negociacoes.reduce((total, n) => total + n.volume, 0.0)}</td>
+            </tfoot>
         </table>
     `;
   }
