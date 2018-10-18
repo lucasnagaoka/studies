@@ -1,8 +1,8 @@
 class NegociacaoController {
     constructor() {
-        this._inputData = document.querySelector("#data");
-        this._inputValor = document.querySelector("#valor");
-        this._inputQuantidade = document.querySelector("#quantidade");
+        this._inputData = $("#data");
+        this._inputValor = $("#valor");
+        this._inputQuantidade = $("#quantidade");
         this._negociacoes = new Negociacoes();
         this.negociacoesView = new NegociacoesView('#negociacoesView');
         this.negociacoesView.update(this._negociacoes);
@@ -10,7 +10,7 @@ class NegociacaoController {
     }
     adiciona(event) {
         event.preventDefault();
-        const negociacao = new Negociacao(new Date(this._inputData.value.replace(/-/g, '/')), parseInt(this._inputValor.value), parseFloat(this._inputQuantidade.value));
+        const negociacao = new Negociacao(new Date(this._inputData.val().replace(/-/g, '/')), parseInt(this._inputValor.val()), parseFloat(this._inputQuantidade.val()));
         // this._negociacoes.getArray().forEach(negociacao => {
         //   console.log(negociacao);
         // });
