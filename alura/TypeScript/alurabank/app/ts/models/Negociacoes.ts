@@ -8,7 +8,7 @@ export class Negociacoes {
     }
 
     public getArray(): Negociacao[] {
-        return [].concat(this._negociacoes);
+        return ([] as Negociacao[]).concat(this._negociacoes);
     }
 
 
