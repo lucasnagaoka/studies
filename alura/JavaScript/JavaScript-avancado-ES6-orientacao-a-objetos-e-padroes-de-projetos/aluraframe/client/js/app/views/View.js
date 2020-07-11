@@ -1,5 +1,4 @@
 class View {
-
     constructor(elemento) {
         this._elemento = elemento;
     }
