@@ -1,4 +1,8 @@
 class NegociacoesView extends View {
+    constructor(elemento) {
+        super(elemento);
+    }
+
     template(model) {
         return `
         <table class="table table-hover table-bordered">
