@@ -10,7 +10,9 @@ class NegociacaoController {
             new ListaNegociacoes(),
             new NegociacoesView($('#negociacoes-view')),
             'adiciona',
-            'esvazia'
+            'esvazia',
+            'ordena',
+            'inverteOrdem'
         );
 
         this._mensagem = new Bind(
@@ -62,5 +64,14 @@ class NegociacaoController {
         this._inputValor.value = 0.0;
 
         this._inputData.focus();
+    }
+
+    ordena(coluna) {
+        if (this._ordemAtual == coluna) {
+            this._listaNegociacoes.inverteOrdem();
+        } else {
+            this._listaNegociacoes.ordena((p, s) => p[coluna] - s[coluna]);
+        }
+        this._ordemAtual = coluna;
     }
 }
