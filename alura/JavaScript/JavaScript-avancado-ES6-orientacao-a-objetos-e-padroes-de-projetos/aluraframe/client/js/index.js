@@ -1,23 +1,23 @@
-var campos = [
+let campos = [
     document.querySelector('#data'),
     document.querySelector('#quantidade'),
-    document.querySelector('#valor')
+    document.querySelector('#valor'),
 ];
 
-var tbody = document.querySelector('table tbody');
+let tbody = document.querySelector('table tbody');
 
-document.querySelector('.form').addEventListener('submit', function(event){
+document.querySelector('.form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    var tr = document.createElement('tr');
+    let tr = document.createElement('tr');
 
-    campos.forEach(function(campo) {
-        var td = document.createElement('td');
+    campos.forEach(function (campo) {
+        let td = document.createElement('td');
         td.textContent = campo.value;
         tr.appendChild(td);
-    }, this);
+    });
 
-    var tdVolume = document.createElement('td');
+    let tdVolume = document.createElement('td');
     tdVolume.textContent = campos[1].value * campos[2].value;
 
     tr.appendChild(tdVolume);

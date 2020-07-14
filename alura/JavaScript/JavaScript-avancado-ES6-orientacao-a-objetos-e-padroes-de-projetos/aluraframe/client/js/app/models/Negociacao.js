@@ -1,11 +1,10 @@
-/*
-
-o "_" como prefixo dos atributos é uma gambiarra do JavaScript pra "encapsular", servindo mais como um aviso ao programador dizendo que a propriedade não deve ser acessada ou alterada fora da classe. Para acessar esses atributos, se usa Getters.
-
+/**
+ * o "_" como prefixo dos atributos é uma gambiarra do JavaScript pra "encapsular",
+ * servindo mais como um aviso ao programador dizendo que a propriedade não deve ser acessada
+ * ou alterada fora da classe. Para acessar esses atributos, se usa Getters.
  */
 
 class Negociacao {
-
     constructor(data, quantidade, valor) {
         this._data = new Date(data.getTime());
         this._quantidade = quantidade;
@@ -26,6 +25,6 @@ class Negociacao {
     }
 
     get valor() {
-        return this._valor
+        return this._valor;
     }
 }
